@@ -14,7 +14,7 @@ pipelineTriggers([
 
     try {
         stage ('Clone') {
-              echo "added Pooling"
+              echo "added Pooling updated"
         	checkout scm
         }
         stage ('Build') {
