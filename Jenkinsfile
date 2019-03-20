@@ -4,6 +4,7 @@ node {
 properties([pipelineTriggers([pollSCM('H * * * *')])])
     try {
         stage ('Clone') {
+              echo "added Pooling"
         	checkout scm
         }
         stage ('Build') {
