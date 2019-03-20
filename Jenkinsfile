@@ -1,7 +1,7 @@
 node {
  	// Clean workspace before doing anything
     deleteDir()
-
+properties([pipelineTriggers([pollSCM('H * * * *')])])
     try {
         stage ('Clone') {
         	checkout scm
