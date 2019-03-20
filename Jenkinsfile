@@ -1,7 +1,17 @@
 node {
  	// Clean workspace before doing anything
     deleteDir()
-properties([pipelineTriggers([pollSCM('H * * * *')])])
+properties([
+//pipelineTriggers([pollSCM('H * * * *')])
+
+pipelineTriggers([
+        [$class: "SCMTrigger", scmpoll_spec: "H/5 * * * *"],
+    ])
+
+])
+
+
+
     try {
         stage ('Clone') {
               echo "added Pooling"
